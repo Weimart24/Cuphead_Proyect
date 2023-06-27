@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleGame.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Federant&family=Syne+Mono&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="bodyGame">
+    <audio class="audioBatalla" src="song/batalla.mp3"></audio>
+
+    <!--Div del personaje y barras de vida-->
+    <div class="contenPrin">
+        <div class="contenGame">
+                <!--Aquí van las barras de vida-->
+                <div class="jugador">
+                    <div class="barraVidaJ"><div class="vidaJugador"></div></div>
+                </div>
+                <div class="enemigo">
+                    <div class="barraVidaE"><div class="vidaEnemigo"></div></div>
+                </div>
+
+                <div class="gifJ1"></div>
+                <div class="gifJ2"></div>
+                <div class="gifV1"></div>
+                <div class="gifV2"></div>
+                <!--Gif de los ataques-->
+                <div class="gifJugadorA"></div>
+                <div class="gifEnemigoA"></div>
+                <!--Gif de muerte-->
+                <div class="gifJugadorM"></div>
+                <div class="gifEnemigoM"></div>
+                <div class="ataDef"></div>
+
+            <!--Div de los ataque o de las desfensas-->
+            <!--<div class="divBotones">-->
+                <div class="contenAtaque">
+                    <!--<button onclick="ataAgua()">Agua</button>
+                    <button onclick="ataFuego()">Fuego</button>
+                    <button onclick="ataRayo()">Rayo</button>-->
+                    <div onclick="ataAgua()" class="bAgua"></div>
+                    <div onclick="ataFuego()" class="bFuego"></div>
+                    <div onclick="ataRayo()" class="bRayo"></div>
+                </div>
+                <div class="contenDefensa">
+                    <!--<button onclick="defAgua()">Agua</button>
+                    <button onclick="defFuego()">Fuego</button>
+                    <button onclick="defRayo()">Rayo</button>-->
+                    <div onclick="defAgua()" class="bAgua"></div>
+                    <div onclick="defFuego()" class="bFuego"></div>
+                    <div onclick="defRayo()" class="bRayo"></div>
+                </div>
+                <div class="contenInicio">
+                    <a href="index.html" class="bInicio">INICIO</a>
+                </div>
+        </div>
+        <div class="contenMensaje"><p class="parrafoM"></p></div>
+        <div class="iconDA"></div>
+    </div>
+
+
+    <!--Div de los mesanjes de ataque-->
+    <script src="js/game.js"></script>
+</body>
+
+</html>

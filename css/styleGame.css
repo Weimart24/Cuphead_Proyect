@@ -1,0 +1,386 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+
+.bodyGame {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenPrin {
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    padding-bottom: 35%;
+    border-radius: 20px;
+    animation: borde 5s linear infinite;
+}
+
+
+@keyframes borde {
+    0%{ border: 5px solid red; }
+    25%{ border: 6px solid rgb(119, 255, 0); }
+    50%{ border: 7px solid rgb(0, 255, 208); }
+    75%{ border: 6px solid rgb(140, 0, 255); }
+    100%{ border: 5px solid rgb(255, 0, 0); }
+}
+
+.contenGame {
+    overflow: hidden;
+    background-image: url("../img/fondoCastillo.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 20px;
+    bottom: 1px;
+    left: 20px;
+    right: 20px;
+}
+/*FIN CSS DEL FONDO DE PANTALLA*/
+
+
+
+/*CSS DE LOS GIFs*/
+/*Jugador*/
+.gifJ1 {
+    position: absolute;
+    top: 54%;
+    left: 15%;
+    width: 15%;
+    height: 25%;
+    background-image: url("../img/jugador1.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+.gifJ2 {
+    position: absolute;
+    top: 55%;
+    left: 14.6%;
+    width: 13%;
+    height: 23%;
+    background-image: url("../img/jugador2.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+/*Villano*/
+.gifV1 {
+    position: absolute;
+    top: 26%;
+    left: 52%;
+    width: 40%;
+    height: 60%;
+    background-image: url("../img/villano1.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+.gifV2 {
+    position: absolute;
+    top: 34%;
+    left: 60%;
+    width: 33%;
+    height: 45%;
+    background-image: url("../img/villano2.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+/*gif de ataque*/
+.gifJugadorA {
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    width: 33%;
+    height: 45%;
+    background-image: url("../img/jugadorAtaque.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: ataqueJ 0.8s;
+    display: none;
+}
+
+@keyframes ataqueJ {
+    0%{transform: translate(0%);}
+    100%{transform: translate(120%, -40%);}
+}
+
+.gifEnemigoA {
+    position: absolute;
+    top: 35%;
+    left: 70%;
+    width: 57%;
+    height: 45%;
+    background-image: url("../img/villanoAtaque.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: ataqueV 1.6s;
+    display: none;
+}
+@keyframes ataqueV {
+    0%{transform: translate(0%);}
+    40%{transform: translate(0%);}
+    100%{transform: translate(-90%);}
+}
+
+/*Gif de muerte*/
+.gifJugadorM {
+    position: absolute;
+    top: 53%;
+    left: 6%;
+    width: 30%;
+    height: 26%;
+    
+    background-image: url("../img/jugadorMuerte.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+@keyframes muerteJ {
+    0%{transform: translate(0%);}
+    100%{transform: translateY(-350%);}
+}
+
+.gifEnemigoM {
+    position: absolute;
+    top: 47%;
+    left: 63%;
+    width: 35%;
+    height: 36%;
+    background-image: url("../img/villanoMuerte.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+/*FIN CSS DE LOS GIF*/
+
+
+
+
+/*CSS DE LOS MENSAJES*/
+.contenMensaje{
+    /*Funete de la letra y tamaño*/
+    font-family: 'Amiri', serif;
+    font-family: 'Federant', cursive;
+    font-family: 'Syne Mono', monospace;
+    font-size: 2vw;
+
+    position: absolute;
+    background-color: #fee540e2;
+    border-radius: 20px;
+    text-align: center; /*formato del texto centrado*/
+    align-items: center; /*Para centrar el contenido vertical*/
+    justify-content: center;
+    display: flex;
+    width: 56%;
+    height: 35%;
+    padding: 1%;
+    top: 2%;
+    left: 21%;
+    color: #6E4C1E;
+    animation: aparecer 0.2s linear;
+}
+
+@keyframes aparecer {
+    0% {transform: 
+        translateY(-40%);
+        opacity: 0;
+    }
+}
+/*FIN CSS DE LOS MENSAJES*/
+
+
+
+
+/*ICONOS DE DEFENSA Y ATAQUE*/
+.iconDA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 5%;
+    left: 19%;
+    width: 65%;
+    height: 90%;
+    animation: animacion 0.7s ease-in-out forwards;
+}
+
+@keyframes animacion {
+    0% {
+      transform: scale(0); /* Escala inicial */
+      opacity: 0; /* Opacidad inicial */
+    }
+    50% {
+      transform: scale(1.2); /* Escala durante la animación */
+      opacity: 1; /* Opacidad durante la animación */
+    }
+    100% {
+      transform: scale(1); /* Escala final */
+      opacity: 1; /* Opacidad final */
+    }
+}
+
+.ataDef {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 48%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+
+
+/*FIN CSS DEL ICONO DE ATAQUE Y DEFENSA*/
+
+
+
+
+
+/*CSS DE LOS BOTONES DE ATAQUE Y DEFENSA*/
+.contenAtaque,
+.contenDefensa {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    bottom: 7%;
+    justify-content: center;
+    display: flex;
+}
+
+.bAgua,
+.bFuego,
+.bRayo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 10%;
+    height: 100%;
+}
+.bAgua {
+    background-image: url('../img/ataques/agua.png');
+    left: 30%;
+    filter: drop-shadow(0px 0px 5px rgb(3, 249, 192));
+}
+.bFuego {
+    background-image: url('../img/ataques/fuego.png');
+    left: 45%;
+    filter: drop-shadow(0px 0px 5px rgb(249, 134, 3));
+}
+.bRayo {
+    background-image: url('../img/ataques/rayo.png');
+    right: 30%;
+    filter: drop-shadow(0px 0px 5px rgb(0, 102, 255));
+}
+
+/*Animacion de los botones*/
+.bAgua:hover,
+.bFuego:hover,
+.bRayo:hover {
+    transform: scale(1.2);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.bAgua:hover {
+    background-image: url("../img/ataques/aguaGif.gif");
+}
+.bFuego:hover {
+    background-image: url("../img/ataques/fuegoGif.gif");
+}
+.bRayo:hover {
+    background-image: url("../img/ataques/rayoGif.gif");
+}
+
+/*FIN CSS DE LOS BOTONES DE ATAQUE Y DEFENSA*/
+
+
+
+
+/*CSS DEL BOTON DE INICIO*/
+.contenInicio {
+    position: absolute;
+    bottom: 12%;
+    left: 43%;
+}
+
+.bInicio {
+    font-family: 'Amiri', serif;
+    font-family: 'Federant', cursive;
+    font-family: 'Syne Mono', monospace;/*Formato del texto*/
+    font-size: 2vw; /* Tamaño del texto*/
+    color: #e19110;
+    display: inline-block; /*Para aplicar animaciones*/
+    transition: all 0.1s ease;
+  }
+
+  .bInicio:hover {
+    color: #fc400195;
+    text-shadow: 0px 0px 10px #ff0000;
+  }
+
+  .bInicio:active {
+    transform: scale(0.9);
+  }
+/*FIN CSS DEL BOTON DE INICIO*/
+
+
+
+
+/*BARRAS DE VIDA DEL JUGADOR Y EL ENEMIGO*/
+.barraVidaJ{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 3.5%;
+    height: 75%;
+    background-color: #00FF00;
+}
+
+.barraVidaE{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 3.5%;
+    height: 75%;
+    background-color: #00FF00;
+}
+
+.vidaJugador{
+    height: 0%; /*Puedes ajustar este valor para cambiar el progreso de la barra */
+    background-color: #eee;
+    width: 100%; 
+}
+
+.vidaEnemigo{
+    height: 0%; /*Puedes ajustar este valor para cambiar el progreso de la barra */
+    background-color: #eee;
+    width: 100%; 
+}
+.vidaJugador,
+.vidaEnemigo {
+    transition: 0.5s all;
+}
+/*FIN BARRA DE VIDA DEL JUGADOR Y EL ENEMIGO*/
