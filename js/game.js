@@ -69,11 +69,11 @@ const matriz = [
 
     if(ini === 0){
         divAtaque.style.display = "block";
-        iconDA.style.backgroundImage = "url('../img/icon/luchando.png')";
+        iconDA.style.backgroundImage = "url('img/icon/luchando.png')";
         tiempoM(3000,1);
     }else{
         divDefensa.style.display = "block";
-        iconDA.style.backgroundImage = "url('../img/icon/blindaje.png')";
+        iconDA.style.backgroundImage = "url('img/icon/blindaje.png')";
         tiempoM(3000,0);
     }
 
@@ -147,7 +147,7 @@ function tiempoM(t) {
             }else{
                 divAtaque.style.display = "none";
                 divDefensa.style.display = "block";
-                iconAtaDef.style.backgroundImage = "url('../img/icon/blindaje.png')";
+                iconAtaDef.style.backgroundImage = "url('img/icon/blindaje.png')";
             }
             barraEne.style.height = 100-enemy+"%";
             gradiente(enemy,1);
@@ -164,7 +164,7 @@ function tiempoM(t) {
             }else{
                 divDefensa.style.display = "none";
                 divAtaque.style.display = "block";
-                iconAtaDef.style.backgroundImage = "url('../img/icon/luchando.png')";
+                iconAtaDef.style.backgroundImage = "url('img/icon/luchando.png')";
             }
             barraJug.style.height = 100-player+"%";
             gradiente(player,0);
